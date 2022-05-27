@@ -7,6 +7,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded( {extended:false} ));
 app.use(personsRoutes);
+app.use('/assets', express.static(__dirname + '/public'));
 
 mongoose.connect(
     'mongodb+srv://america:Ramon123456@cluster0.rlkv9.mongodb.net/?retryWrites=true&w=majority', 
